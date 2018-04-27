@@ -1,0 +1,34 @@
+[General]
+FullMachineName= <%= $ds_389::full_machine_name %>
+SuiteSpotUserID= <%= $ds_389::suite_spot_userid %>
+SuiteSpotGroup= <%= $ds_389::suite_spot_group %>
+ConfigDirectoryLdapURL= <%= $ds_389::configdirectoryldapurl %>
+AdminDomain= <%= $ds_389::admindomain %>
+ConfigDirectoryAdminID= <%= $ds_389::configdirectoryadminid %>
+ConfigDirectoryAdminPwd= <%= $ds_389::configdirectoryadminpwd %>
+
+[slapd]
+ServerPort= <%= $ds_389::serverport %>
+ServerIdentifier= <%= $ds_389::serveridentifier %>
+Suffix= <%= $ds_389::suffix %>
+RootDN= <%= $ds_389::rootdn %>
+RootDNPwd= <%= $ds_389::rootdnpwd %>
+AddOrgEntries= <%= $ds_389::addorgentries %>
+AddSampleEntries= <%= $ds_389::addsampleentries %>
+InstallLdifFile= <%= $ds_389::installldiffile %>
+<% if $ds_389::schemafile != '' { -%>
+SchemaFile= <%= $ds_389::schemafile %>
+<% } -%>
+<% if $ds_389::configfile != '' { -%>
+ConfigFile= <%= $ds_389::configfile %>
+<% } -%>
+ds_bename=<%= $ds_389::ds_bename %>
+SlapdConfigForMC= <%= $ds_389::slapdconfigformc %>
+UseExistingMC= <%= $ds_389::useexistingmc %>
+
+[admin]
+SysUser= <%= $ds_389::sysuser %>
+Port= <%= $ds_389::port %>
+ServerAdminID= <%= $ds_389::serveradminid %>
+ServerAdminPwd= <%= $ds_389::serveradminpwd %>
+ServerIpAddress= <%= $ds_389::serveripaddress %>

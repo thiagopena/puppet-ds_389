@@ -1,0 +1,32 @@
+{
+  "name": "thiagopena-ds_389",
+  "version": "1.0.0",
+  "author": "thiagopena",
+  "summary": "Installs, configures, and manages 389 Directory Server.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/thiagopena/puppet-ds_389",
+  "project_page": "https://github.com/thiagopena/puppet-ds_389",
+  "issues_url": "https://github.com/thiagopena/puppet-ds_389/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.10.0 < 6.0.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "name":"puppetlabs/stdlib"
+    }
+  ],
+  "pdk-version": "1.2.1",
+  "template-url": "https://github.com/puppetlabs/pdk-module-template",
+  "template-ref": "heads/master-0-g00b18a7"
+}
