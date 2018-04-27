@@ -2,7 +2,7 @@
 class ds_389::install {
 
   case $::osfamily {
-    'Debian', 'RedHat': {
+    'RedHat': {
       $package = ['389-ds', '389-ds-base',]
     }
     default: {
