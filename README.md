@@ -19,7 +19,7 @@ This module will install and configure 389 Directory Server in your system.
 
 This module was tested under these platforms
 
-- EL 6 and 7
+- EL 7
 
 Tested only in X86_64 arch.
 
