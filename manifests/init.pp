@@ -14,7 +14,7 @@
 # @param [String] configdirectoryadminid User ID of the user that has administration privileges
 #       to the configuration directory
 # @param [String] configdirectoryadminpwd Password for the admin user
-# @param [String] serverport Port the server will use for LDAP connections
+# @param [Integer] serverport Port the server will use for LDAP connections
 # @param [String] serveridentifier Server identifier
 # @param [String] suffix Suffix under which to store the directory data
 # @param [String] rootdn Distinguished name used by the Directory Manager
@@ -31,7 +31,7 @@
 # @param [String] useexistingmc Sets whether to store the configuration data in a separate
 #       Configuration Directory Server
 # @param [String] sysuser User as which the Admin Server will run
-# @param [String] port Port that the Admin Server will use
+# @param [Integer] port Port that the Admin Server will use
 # @param [String] serveradminid Administration ID that can be used to access this Admin Server
 #       if the configuration directory is not responding
 # @param [String] serveradminpwd Password for the Admin Server user
@@ -50,7 +50,7 @@ class ds_389(
     String $configdirectoryadminid  = 'admin',
     String $configdirectoryadminpwd = 'secretpass',
 
-    String $serverport              = '389',
+    Integer $serverport             = 389,
     String $serveridentifier        = 'ldap',
     String $suffix                  = 'dc=example,dc=com',
     String $rootdn                  = 'cn=Directory Manager',
@@ -65,7 +65,7 @@ class ds_389(
     String $useexistingmc           = 'no',
 
     String $sysuser                 = 'dirsrv',
-    String $port                    = '9830',
+    Integer $port                   = 9830,
     String $serveradminid           = 'admin',
     String $serveradminpwd          = 'secretpass',
     String $serveripaddress         = $::ipaddress,
@@ -77,5 +77,9 @@ class ds_389(
     include ds_389::install
     include ds_389::config
     include ds_389::service
+
+    Class['ds_389::install']
+      -> Class['ds_389::config']
+        ~> Class['ds_389::service']
 
 }

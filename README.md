@@ -103,7 +103,7 @@ Password for the admin user
 
 #### `serverport`
 
-Type: String
+Type: Integer
 
 Port the server will use for LDAP connections
 
@@ -187,7 +187,7 @@ User as which the Admin Server will run
 
 #### `port`
 
-Type: String
+Type: Integer
 
 Port that the Admin Server will use
 
