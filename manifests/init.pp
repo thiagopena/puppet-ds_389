@@ -72,11 +72,18 @@ class ds_389(
 
     String $service_name            = 'dirsrv',
     String $admin_service_name      = 'dirsrv-admin',
+    Boolean $manage_epel_repo       = false,
 ){
 
     include ds_389::install
     include ds_389::config
     include ds_389::service
+
+    if $ds_389::manage_epel_repo {
+      include ds_389::epel_repo
+      Class['ds_389::epel_repo']
+        -> Class['ds_389::install']
+    }
 
     Class['ds_389::install']
       -> Class['ds_389::config']
